@@ -97,7 +97,7 @@ module.exports = ".page{\r\nheight: 100vh;\r\n}\r\n.imagenHomeClass{\r\n    posi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page\">\n  <!--fxHide.lt-md=\"true\"-->\n  <div fxHide.lt-md=\"true\" *ngIf=\"ruta == 'Inicio'\" class=\"imagenHomeClass\" style=\"background-image:url('assets/VOYAGER_6200_PLANTRONICS.jpg');\"></div>\n  <div fxHide.gt-sm=\"true\" *ngIf=\"ruta == 'Inicio'\" class=\"imagenHomeClassMovil\" style=\"background-image:url('assets/VOYAGER_6200_PLANTRONICS.jpg');\"></div>\n  <mat-toolbar color=\"primary\" toobar-Action> \n    <span fxHide.lt-md=\"true\" class=\"logoSpan\"><a mat-button movil-button=\"false\" routerLink=\"/home\" (click)=\"cambioPagina('Inicio')\"><img mat-card-image class=\"img-logo\" src=\"assets/Logo.png\"/></a></span>\n    <div fxShow=\"true\" fxHide.lt-md=\"true\" class=\"menu-page\" *ngFor=\"let routeObj of routesObj\">\n      <a mat-button movil-button=\"false\" routerLink={{routeObj.link}} (click)=\"cambioPagina(routeObj.alias)\">{{routeObj.alias}}</a>\n    </div>\n    <div fxShow=\"true\" fxHide.gt-sm=\"true\" class=\"menu-movil\">\n      <mat-icon class=\"menu-toggle-movil\" (click)=\"sidenav.toggle()\">view_headline</mat-icon>\n      <a routerLink=\"/home\"><img mat-card-image class=\"img-logo-movil\" src=\"assets/Logo.png\"/></a>\n    </div>\n  </mat-toolbar>\n  <mat-sidenav-container fxFlexFill class=\"example-container\" class=\"sidenavClass\">\n    <mat-sidenav #sidenav fxLayout=\"column\">\n      <div fxLayout=\"column\" *ngFor=\"let routeObj of routesObj\">\n        <a mat-button movil-button=\"true\" routerLink=\"{{routeObj.link}}\" (click)=\"sidenav.toggle()\" (click)=\"cambioPaginaMovil(routeObj.alias)\">{{routeObj.alias}}</a>\n      </div>\n    </mat-sidenav>\n    <mat-sidenav-content fxFlexFill>\n      <router-outlet></router-outlet>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n  <app-footer ruta={{ruta}} (talk)=\"talkBack($event)\"></app-footer>\n</div>"
+module.exports = "<div class=\"page\">\n  <!--fxHide.lt-md=\"true\"-->\n  <div fxHide.lt-md=\"true\" *ngIf=\"ruta == 'Inicio' || ruta == '/'\" class=\"imagenHomeClass\" style=\"background-image:url('assets/VOYAGER_6200_PLANTRONICS.jpg');\"></div>\n  <div fxHide.gt-sm=\"true\" *ngIf=\"ruta == 'Inicio' || ruta == '/'\" class=\"imagenHomeClassMovil\" style=\"background-image:url('assets/VOYAGER_6200_PLANTRONICS.jpg');\"></div>\n  <mat-toolbar color=\"primary\" toobar-Action> \n    <span fxHide.lt-md=\"true\" class=\"logoSpan\"><a mat-button movil-button=\"false\" routerLink=\"/home\" (click)=\"cambioPagina('Inicio')\"><img mat-card-image class=\"img-logo\" src=\"assets/Logo.png\"/></a></span>\n    <div fxShow=\"true\" fxHide.lt-md=\"true\" class=\"menu-page\" *ngFor=\"let routeObj of routesObj\">\n      <a mat-button movil-button=\"false\" routerLink={{routeObj.link}} (click)=\"cambioPagina(routeObj.alias)\">{{routeObj.alias}}</a>\n    </div>\n    <div fxShow=\"true\" fxHide.gt-sm=\"true\" class=\"menu-movil\">\n      <mat-icon class=\"menu-toggle-movil\" (click)=\"sidenav.toggle()\">view_headline</mat-icon>\n      <a routerLink=\"/home\"><img mat-card-image class=\"img-logo-movil\" src=\"assets/Logo.png\"/></a>\n    </div>\n  </mat-toolbar>\n  <mat-sidenav-container fxFlexFill class=\"example-container\" class=\"sidenavClass\">\n    <mat-sidenav #sidenav fxLayout=\"column\">\n      <div fxLayout=\"column\" *ngFor=\"let routeObj of routesObj\">\n        <a mat-button movil-button=\"true\" routerLink=\"{{routeObj.link}}\" (click)=\"sidenav.toggle()\" (click)=\"cambioPaginaMovil(routeObj.alias)\">{{routeObj.alias}}</a>\n      </div>\n    </mat-sidenav>\n    <mat-sidenav-content fxFlexFill>\n      <router-outlet></router-outlet>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n  <app-footer ruta={{ruta}} (talk)=\"talkBack($event)\"></app-footer>\n</div>"
 
 /***/ }),
 
@@ -120,7 +120,7 @@ __webpack_require__.r(__webpack_exports__);
 var AppComponent = /** @class */ (function () {
     function AppComponent(document) {
         this.document = document;
-        this.ruta = "Inicio";
+        this.ruta = "";
         this.chatItems = [];
         this.routesObj = [
             { nombre: "Home", link: "/home", alias: "Inicio", descripcion: "Pagina inicial" },
@@ -129,6 +129,13 @@ var AppComponent = /** @class */ (function () {
             { nombre: "Promociones", link: "/promociones", alias: "Promociones", descripcion: "Pagina Promociones" },
             { nombre: "Contacto", link: "/contacto", alias: "Contacto", descripcion: "Pagina Contacto" }
         ];
+        console.log(document.location.pathname);
+        if (document.location.pathname == "/home" || document.location.pathname == "/") {
+            this.ruta = "Inicio";
+        }
+        else {
+            this.ruta = "";
+        }
     }
     AppComponent.prototype.cambioPagina = function (nombre) {
         this.ruta = nombre;
@@ -184,8 +191,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _productos_productos_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./productos/productos.component */ "./src/app/productos/productos.component.ts");
 /* harmony import */ var _promociones_promociones_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./promociones/promociones.component */ "./src/app/promociones/promociones.component.ts");
 /* harmony import */ var _contacto_contacto_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./contacto/contacto.component */ "./src/app/contacto/contacto.component.ts");
-/* harmony import */ var _highlight_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./highlight.directive */ "./src/app/highlight.directive.ts");
+/* harmony import */ var _boton_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./boton.directive */ "./src/app/boton.directive.ts");
 /* harmony import */ var _toobar_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./toobar.directive */ "./src/app/toobar.directive.ts");
+/* harmony import */ var _page_not_found_component_page_not_found_component_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./page-not-found-component/page-not-found-component.component */ "./src/app/page-not-found-component/page-not-found-component.component.ts");
 
 
 
@@ -202,13 +210,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var routes = [
-    { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"] },
+    { path: '', redirectTo: '/home', pathMatch: "full" },
     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"] },
     { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_8__["AboutComponent"] },
     { path: 'productos', component: _productos_productos_component__WEBPACK_IMPORTED_MODULE_10__["ProductosComponent"] },
     { path: 'promociones', component: _promociones_promociones_component__WEBPACK_IMPORTED_MODULE_11__["PromocionesComponent"] },
-    { path: 'contacto', component: _contacto_contacto_component__WEBPACK_IMPORTED_MODULE_12__["ContactoComponent"] }
+    { path: 'contacto', component: _contacto_contacto_component__WEBPACK_IMPORTED_MODULE_12__["ContactoComponent"] },
+    { path: '**', redirectTo: '/home', pathMatch: "full" }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -223,8 +233,9 @@ var AppModule = /** @class */ (function () {
                 _productos_productos_component__WEBPACK_IMPORTED_MODULE_10__["ProductosComponent"],
                 _promociones_promociones_component__WEBPACK_IMPORTED_MODULE_11__["PromocionesComponent"],
                 _contacto_contacto_component__WEBPACK_IMPORTED_MODULE_12__["ContactoComponent"],
-                _highlight_directive__WEBPACK_IMPORTED_MODULE_13__["HighlightDirective"],
-                _toobar_directive__WEBPACK_IMPORTED_MODULE_14__["ToobarDirective"]
+                _boton_directive__WEBPACK_IMPORTED_MODULE_13__["HighlightDirective"],
+                _toobar_directive__WEBPACK_IMPORTED_MODULE_14__["ToobarDirective"],
+                _page_not_found_component_page_not_found_component_component__WEBPACK_IMPORTED_MODULE_15__["PageNotFoundComponentComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -237,6 +248,119 @@ var AppModule = /** @class */ (function () {
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/boton.directive.ts":
+/*!************************************!*\
+  !*** ./src/app/boton.directive.ts ***!
+  \************************************/
+/*! exports provided: HighlightDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HighlightDirective", function() { return HighlightDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
+
+
+var HighlightDirective = /** @class */ (function () {
+    function HighlightDirective(el, document) {
+        this.el = el;
+        this.document = document;
+        var hostElem = this.el.nativeElement;
+        if (el.nativeElement.getAttribute("movil-button") == "false") {
+            el.nativeElement.style.width = 'auto';
+            el.nativeElement.style.fontSize = '19px';
+            el.nativeElement.style.fontFamily = 'Arial';
+            if (this.document.location.pathname == "/home" || this.document.location.pathname == "/") {
+                el.nativeElement.style.color = 'White';
+            }
+            else {
+                el.nativeElement.style.color = 'Black';
+            }
+        }
+        else {
+        }
+    }
+    HighlightDirective_1 = HighlightDirective;
+    HighlightDirective.prototype.onMouseEnter = function () {
+        if (this.el.nativeElement.getAttribute("movil-button") == "false") {
+            this.highlight('Blue');
+        }
+    };
+    HighlightDirective.prototype.onMouseLeave = function () {
+        if (this.el.nativeElement.getAttribute("movil-button") == "false") {
+            if (this.document.location.pathname != "/home") {
+                this.highlight('Black');
+            }
+            else {
+                this.highlight('White');
+            }
+        }
+    };
+    HighlightDirective.prototype.click = function () {
+        if (this.el.nativeElement.getAttribute("movil-button") == "false") {
+            if (this.el.nativeElement.text == "Inicio" || this.el.nativeElement.text == "") {
+                for (var _i = 0, _a = this.el.nativeElement.parentElement.parentElement.children; _i < _a.length; _i++) {
+                    var nodeD = _a[_i];
+                    nodeD.children[0].style.color = "White";
+                }
+            }
+            else {
+                for (var _b = 0, _c = this.el.nativeElement.parentElement.parentElement.children; _b < _c.length; _b++) {
+                    var nodeD = _c[_b];
+                    nodeD.children[0].style.color = "Black";
+                }
+            }
+        }
+    };
+    HighlightDirective.prototype.highlight = function (color) {
+        if (this.el.nativeElement.getAttribute("movil-button") == "false") {
+            this.el.nativeElement.style.color = color;
+        }
+    };
+    HighlightDirective.prototype.ngOnInit = function () {
+    };
+    var HighlightDirective_1;
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseenter'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], HighlightDirective.prototype, "onMouseEnter", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseleave'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], HighlightDirective.prototype, "onMouseLeave", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('click'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], HighlightDirective.prototype, "click", null);
+    HighlightDirective = HighlightDirective_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+            selector: '[mat-button]'
+        }),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [],
+            exports: [
+                HighlightDirective_1
+            ],
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], Document])
+    ], HighlightDirective);
+    return HighlightDirective;
 }());
 
 
@@ -367,120 +491,6 @@ var FooterComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/highlight.directive.ts":
-/*!****************************************!*\
-  !*** ./src/app/highlight.directive.ts ***!
-  \****************************************/
-/*! exports provided: HighlightDirective */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HighlightDirective", function() { return HighlightDirective; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-
-
-
-var HighlightDirective = /** @class */ (function () {
-    function HighlightDirective(el, document) {
-        this.el = el;
-        this.document = document;
-        var hostElem = this.el.nativeElement;
-        console.log("..." + this.document.location.pathname);
-        if (el.nativeElement.getAttribute("movil-button") == "false") {
-            el.nativeElement.style.width = 'auto';
-            el.nativeElement.style.fontSize = '19px';
-            el.nativeElement.style.fontFamily = 'Arial';
-            if (this.document.location.pathname == "/home" || this.document.location.pathname == "/") {
-                el.nativeElement.style.color = 'White';
-            }
-            else {
-                el.nativeElement.style.color = 'Black';
-            }
-        }
-        else {
-        }
-    }
-    HighlightDirective_1 = HighlightDirective;
-    HighlightDirective.prototype.onMouseEnter = function () {
-        if (this.el.nativeElement.getAttribute("movil-button") == "false") {
-            this.highlight('Blue');
-        }
-    };
-    HighlightDirective.prototype.onMouseLeave = function () {
-        if (this.el.nativeElement.getAttribute("movil-button") == "false") {
-            if (this.document.location.pathname != "/home") {
-                this.highlight('Black');
-            }
-            else {
-                this.highlight('White');
-            }
-        }
-    };
-    HighlightDirective.prototype.click = function () {
-        if (this.el.nativeElement.getAttribute("movil-button") == "false") {
-            if (this.el.nativeElement.text == "Inicio" || this.el.nativeElement.text == "") {
-                for (var _i = 0, _a = this.el.nativeElement.parentElement.parentElement.children; _i < _a.length; _i++) {
-                    var nodeD = _a[_i];
-                    nodeD.children[0].style.color = "White";
-                }
-            }
-            else {
-                for (var _b = 0, _c = this.el.nativeElement.parentElement.parentElement.children; _b < _c.length; _b++) {
-                    var nodeD = _c[_b];
-                    nodeD.children[0].style.color = "Black";
-                }
-            }
-        }
-    };
-    HighlightDirective.prototype.highlight = function (color) {
-        if (this.el.nativeElement.getAttribute("movil-button") == "false") {
-            this.el.nativeElement.style.color = color;
-        }
-    };
-    HighlightDirective.prototype.ngOnInit = function () {
-    };
-    var HighlightDirective_1;
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseenter'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
-    ], HighlightDirective.prototype, "onMouseEnter", null);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseleave'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
-    ], HighlightDirective.prototype, "onMouseLeave", null);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('click'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
-    ], HighlightDirective.prototype, "click", null);
-    HighlightDirective = HighlightDirective_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
-            selector: '[mat-button]'
-        }),
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [],
-            exports: [
-                HighlightDirective_1
-            ],
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"])),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], Document])
-    ], HighlightDirective);
-    return HighlightDirective;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/home/home.component.css":
 /*!*****************************************!*\
   !*** ./src/app/home/home.component.css ***!
@@ -597,6 +607,62 @@ var MaterialModule = /** @class */ (function () {
         })
     ], MaterialModule);
     return MaterialModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/page-not-found-component/page-not-found-component.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/page-not-found-component/page-not-found-component.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2Utbm90LWZvdW5kLWNvbXBvbmVudC9wYWdlLW5vdC1mb3VuZC1jb21wb25lbnQuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/page-not-found-component/page-not-found-component.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/page-not-found-component/page-not-found-component.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  page-not-found-component works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/page-not-found-component/page-not-found-component.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/page-not-found-component/page-not-found-component.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: PageNotFoundComponentComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageNotFoundComponentComponent", function() { return PageNotFoundComponentComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PageNotFoundComponentComponent = /** @class */ (function () {
+    function PageNotFoundComponentComponent() {
+    }
+    PageNotFoundComponentComponent.prototype.ngOnInit = function () {
+    };
+    PageNotFoundComponentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-page-not-found-component',
+            template: __webpack_require__(/*! ./page-not-found-component.component.html */ "./src/app/page-not-found-component/page-not-found-component.component.html"),
+            styles: [__webpack_require__(/*! ./page-not-found-component.component.css */ "./src/app/page-not-found-component/page-not-found-component.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], PageNotFoundComponentComponent);
+    return PageNotFoundComponentComponent;
 }());
 
 
