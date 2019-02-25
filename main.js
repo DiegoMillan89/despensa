@@ -128,6 +128,7 @@ var AppComponent = /** @class */ (function () {
             { nombre: "Promociones", link: "/promociones", alias: "Promociones", descripcion: "Pagina Promociones" },
             { nombre: "Contacto", link: "/contacto", alias: "Contacto", descripcion: "Pagina Contacto" }
         ];
+        console.log(document.location);
         for (var _i = 0, _a = this.routesObj; _i < _a.length; _i++) {
             var ruta = _a[_i];
             if (ruta.link == document.location.pathname) {
