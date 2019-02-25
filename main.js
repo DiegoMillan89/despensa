@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  about works!\n</p>\n"
+module.exports = "<div class=\"pageContent\">\n\n</div>"
 
 /***/ }),
 
@@ -86,7 +86,7 @@ var AboutComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".page{\r\nheight: 100vh;\r\n}\r\n.img-logo {\r\nwidth:100%;\r\n}\r\n.img-logo-movil {\r\nwidth:120px;\r\nheight: 100%;\r\n}\r\n.mat-toolbar{\r\n    min-height:100px;\r\n    z-index:100;\r\n    padding-top:5px;\r\n}\r\n.mat-toolbar.mat-primary {\r\nz-index:100;\r\nbackground:transparent;\r\ncolor: Black;\r\n}\r\n.menu-movil{\r\nflex:1 1 auto;\r\ntext-align: center;\r\n}\r\n.menu-page{\r\nvertical-align:middle;\r\nflex: 1 1 auto;\r\ntext-align:center;\r\n}\r\n.menu-toggle-movil{\r\nposition:absolute;\r\nleft:5%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQSxhQUFhO0FBQ2I7QUFDQTtBQUNBLFVBQVU7QUFDVjtBQUNBO0FBQ0EsV0FBVztBQUNYLFlBQVk7QUFDWjtBQUNBO0lBQ0ksZ0JBQWdCO0lBQ2hCLFdBQVc7SUFDWCxlQUFlO0FBQ25CO0FBQ0E7QUFDQSxXQUFXO0FBQ1gsc0JBQXNCO0FBQ3RCLFlBQVk7QUFDWjtBQUNBO0FBQ0EsYUFBYTtBQUNiLGtCQUFrQjtBQUNsQjtBQUNBO0FBQ0EscUJBQXFCO0FBQ3JCLGNBQWM7QUFDZCxpQkFBaUI7QUFDakI7QUFDQTtBQUNBLGlCQUFpQjtBQUNqQixPQUFPO0FBQ1AiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wYWdle1xyXG5oZWlnaHQ6IDEwMHZoO1xyXG59XHJcbi5pbWctbG9nbyB7XHJcbndpZHRoOjEwMCU7XHJcbn1cclxuLmltZy1sb2dvLW1vdmlsIHtcclxud2lkdGg6MTIwcHg7XHJcbmhlaWdodDogMTAwJTtcclxufVxyXG4ubWF0LXRvb2xiYXJ7XHJcbiAgICBtaW4taGVpZ2h0OjEwMHB4O1xyXG4gICAgei1pbmRleDoxMDA7XHJcbiAgICBwYWRkaW5nLXRvcDo1cHg7XHJcbn1cclxuLm1hdC10b29sYmFyLm1hdC1wcmltYXJ5IHtcclxuei1pbmRleDoxMDA7XHJcbmJhY2tncm91bmQ6dHJhbnNwYXJlbnQ7XHJcbmNvbG9yOiBCbGFjaztcclxufVxyXG4ubWVudS1tb3ZpbHtcclxuZmxleDoxIDEgYXV0bztcclxudGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbi5tZW51LXBhZ2V7XHJcbnZlcnRpY2FsLWFsaWduOm1pZGRsZTtcclxuZmxleDogMSAxIGF1dG87XHJcbnRleHQtYWxpZ246Y2VudGVyO1xyXG59XHJcbi5tZW51LXRvZ2dsZS1tb3ZpbHtcclxucG9zaXRpb246YWJzb2x1dGU7XHJcbmxlZnQ6NSU7XHJcbn0iXX0= */"
+module.exports = ".page{\r\nheight: 100vh;\r\n}\r\n.imagenHomeClass{\r\n    position:absolute;\r\n    width:100%;\r\n    top:0;\r\n    height: 80vh;\r\n    left:0;\r\n    background-repeat:no-repeat;\r\n    background-size:100%;\r\n}\r\n.sidenavClass{\r\n    background:transparent;\r\n}\r\n.logoSpan{\r\n    width:15%;\r\n    z-index:100;\r\n    padding-left:50px;\r\n}\r\n.img-logo {\r\nwidth:100%;\r\n}\r\n.img-logo-movil {\r\nwidth:120px;\r\nheight: 100%;\r\n}\r\n.mat-toolbar{\r\n    min-height:100px;\r\n    padding-top:5px;\r\n}\r\n.menu-movil{\r\nflex:1 1 auto;\r\ntext-align: center; \r\nz-index:100;\r\n}\r\n.menu-page{\r\nvertical-align:middle;\r\nflex: 1 1 auto;\r\ntext-align:center;\r\n}\r\n.menu-toggle-movil{\r\nposition:absolute;\r\nleft:10%;\r\ncolor: black;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQSxhQUFhO0FBQ2I7QUFDQTtJQUNJLGlCQUFpQjtJQUNqQixVQUFVO0lBQ1YsS0FBSztJQUNMLFlBQVk7SUFDWixNQUFNO0lBQ04sMkJBQTJCO0lBQzNCLG9CQUFvQjtBQUN4QjtBQUNBO0lBQ0ksc0JBQXNCO0FBQzFCO0FBQ0E7SUFDSSxTQUFTO0lBQ1QsV0FBVztJQUNYLGlCQUFpQjtBQUNyQjtBQUNBO0FBQ0EsVUFBVTtBQUNWO0FBQ0E7QUFDQSxXQUFXO0FBQ1gsWUFBWTtBQUNaO0FBQ0E7SUFDSSxnQkFBZ0I7SUFDaEIsZUFBZTtBQUNuQjtBQUNBO0FBQ0EsYUFBYTtBQUNiLGtCQUFrQjtBQUNsQixXQUFXO0FBQ1g7QUFDQTtBQUNBLHFCQUFxQjtBQUNyQixjQUFjO0FBQ2QsaUJBQWlCO0FBQ2pCO0FBQ0E7QUFDQSxpQkFBaUI7QUFDakIsUUFBUTtBQUNSLFlBQVk7QUFDWiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBhZ2V7XHJcbmhlaWdodDogMTAwdmg7XHJcbn1cclxuLmltYWdlbkhvbWVDbGFzc3tcclxuICAgIHBvc2l0aW9uOmFic29sdXRlO1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIHRvcDowO1xyXG4gICAgaGVpZ2h0OiA4MHZoO1xyXG4gICAgbGVmdDowO1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6bm8tcmVwZWF0O1xyXG4gICAgYmFja2dyb3VuZC1zaXplOjEwMCU7XHJcbn1cclxuLnNpZGVuYXZDbGFzc3tcclxuICAgIGJhY2tncm91bmQ6dHJhbnNwYXJlbnQ7XHJcbn1cclxuLmxvZ29TcGFue1xyXG4gICAgd2lkdGg6MTUlO1xyXG4gICAgei1pbmRleDoxMDA7XHJcbiAgICBwYWRkaW5nLWxlZnQ6NTBweDtcclxufVxyXG4uaW1nLWxvZ28ge1xyXG53aWR0aDoxMDAlO1xyXG59XHJcbi5pbWctbG9nby1tb3ZpbCB7XHJcbndpZHRoOjEyMHB4O1xyXG5oZWlnaHQ6IDEwMCU7XHJcbn1cclxuLm1hdC10b29sYmFye1xyXG4gICAgbWluLWhlaWdodDoxMDBweDtcclxuICAgIHBhZGRpbmctdG9wOjVweDtcclxufVxyXG4ubWVudS1tb3ZpbHtcclxuZmxleDoxIDEgYXV0bztcclxudGV4dC1hbGlnbjogY2VudGVyOyBcclxuei1pbmRleDoxMDA7XHJcbn1cclxuLm1lbnUtcGFnZXtcclxudmVydGljYWwtYWxpZ246bWlkZGxlO1xyXG5mbGV4OiAxIDEgYXV0bztcclxudGV4dC1hbGlnbjpjZW50ZXI7XHJcbn1cclxuLm1lbnUtdG9nZ2xlLW1vdmlse1xyXG5wb3NpdGlvbjphYnNvbHV0ZTtcclxubGVmdDoxMCU7XHJcbmNvbG9yOiBibGFjaztcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -97,7 +97,7 @@ module.exports = ".page{\r\nheight: 100vh;\r\n}\r\n.img-logo {\r\nwidth:100%;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page\">\n  <div fxHide.lt-md=\"true\" style=\"position:absolute;width:100%;z-index:0;top:0;left:0;background-image:url('assets/VOYAGER_6200_PLANTRONICS.jpg');background-repeat:no-repeat;background-size:auto;\" class=\"page\"></div>\n  <mat-toolbar color=\"primary\"> \n    <span fxHide.lt-md=\"true\" style=\"width:15%;z-index:100;padding-left:50px;\"><a routerLink=\"/home\"><img mat-card-image class=\"img-logo\" src=\"assets/Logo.png\"/></a></span>\n    <!--<span class=\"example-spacer\"></span>-->\n    <div fxShow=\"true\" fxHide.lt-md=\"true\" class=\"menu-page\">\n      <!-- The following menu items will be hidden on both SM and XS screen sizes -->\n      <a mat-button movil-button=\"false\" routerLink=\"/home\">Inicio</a>\n      <a mat-button movil-button=\"false\" routerLink=\"/about\">Empresa</a>\n      <a mat-button movil-button=\"false\" routerLink=\"/productos\">Productos</a>\n      <a mat-button movil-button=\"false\" routerLink=\"/promociones\">Promociones</a>\n      <a mat-button movil-button=\"false\" routerLink=\"/contacto\">Contacto</a>\n    </div>\n    <div fxShow=\"true\" fxHide.gt-sm=\"true\" class=\"menu-movil\">\n      <mat-icon class=\"menu-toggle-movil\" (click)=\"sidenav.toggle()\">view_headline</mat-icon>\n      <a routerLink=\"/home\"><img mat-card-image class=\"img-logo-movil\" src=\"assets/Logo.png\"/></a>\n    </div>\n  </mat-toolbar>\n  <mat-sidenav-container fxFlexFill class=\"example-container\" style=\"background:transparent;\">\n    <mat-sidenav #sidenav fxLayout=\"column\">\n      <div fxLayout=\"column\">\n        <!--<a (click)=\"sidenav.toggle()\" movil-button=\"true\" mat-button>Close</a>-->\n        <a mat-button movil-button=\"true\" routerLink=\"/home\" (click)=\"sidenav.toggle()\">Inicio</a>\n        <a mat-button movil-button=\"true\" routerLink=\"/about\" (click)=\"sidenav.toggle()\">Empresa</a>\n        <a mat-button movil-button=\"true\" routerLink=\"/productos\" (click)=\"sidenav.toggle()\">Productos</a>\n        <a mat-button movil-button=\"true\" routerLink=\"/promociones\" (click)=\"sidenav.toggle()\">Promociones</a>\n        <a mat-button movil-button=\"true\" routerLink=\"/contacto\" (click)=\"sidenav.toggle()\">Contacto</a>\n      </div>\n    </mat-sidenav>\n    <mat-sidenav-content fxFlexFill>\n      <router-outlet></router-outlet>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n  <app-footer></app-footer>\n</div>"
+module.exports = "<div class=\"page\">\n  <div fxHide.lt-md=\"true\" *ngIf=\"imagenHome\" class=\"imagenHomeClass\" style=\"background-image:url('assets/VOYAGER_6200_PLANTRONICS.jpg');\"></div>\n  <mat-toolbar color=\"primary\" toobar-Action> \n    <span fxHide.lt-md=\"true\" class=\"logoSpan\"><a mat-button movil-button=\"false\" routerLink=\"/home\" (click)=\"cambioPagina('Home')\"><img mat-card-image class=\"img-logo\" src=\"assets/Logo.png\"/></a></span>\n    <div fxShow=\"true\" fxHide.lt-md=\"true\" class=\"menu-page\" *ngFor=\"let routeObj of routesObj\">\n      <a mat-button movil-button=\"false\" routerLink={{routeObj.link}} (click)=\"cambioPagina(routeObj.nombre)\">{{routeObj.alias}}</a>\n    </div>\n    <div fxShow=\"true\" fxHide.gt-sm=\"true\" class=\"menu-movil\">\n      <mat-icon class=\"menu-toggle-movil\" (click)=\"sidenav.toggle()\">view_headline</mat-icon>\n      <a routerLink=\"/home\"><img mat-card-image class=\"img-logo-movil\" src=\"assets/Logo.png\"/></a>\n    </div>\n  </mat-toolbar>\n  <mat-sidenav-container fxFlexFill class=\"example-container\" class=\"sidenavClass\">\n    <mat-sidenav #sidenav fxLayout=\"column\">\n      <div fxLayout=\"column\" *ngFor=\"let routeObj of routesObj\">\n        <a mat-button movil-button=\"true\" routerLink=\"{{routeObj.link}}\" (click)=\"sidenav.toggle()\">{{routeObj.alias}}</a>\n      </div>\n    </mat-sidenav>\n    <mat-sidenav-content fxFlexFill>\n      <router-outlet></router-outlet>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n  <app-footer></app-footer>\n</div>"
 
 /***/ }),
 
@@ -113,17 +113,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(document) {
+        this.document = document;
+        this.routesObj = [
+            { nombre: "Home", link: "/home", alias: "Inicio", descripcion: "Pagina inicial" },
+            { nombre: "About", link: "/about", alias: "Empresa", descripcion: "Pagina Mision" },
+            { nombre: "Productos", link: "/productos", alias: "Productos", descripcion: "Pagina Catalogo" },
+            { nombre: "Promociones", link: "/promociones", alias: "Promociones", descripcion: "Pagina Promociones" },
+            { nombre: "Contacto", link: "/contacto", alias: "Contacto", descripcion: "Pagina Contacto" }
+        ];
+        if (this.document.location.pathname == "/home" || this.document.location.pathname == "/") {
+            this.imagenHome = true;
+        }
     }
+    AppComponent.prototype.cambioPagina = function (nombre) {
+        if (nombre != "Home") {
+            this.imagenHome = false;
+        }
+        else {
+            this.imagenHome = true;
+        }
+    };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        })
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Document])
     ], AppComponent);
     return AppComponent;
 }());
@@ -232,7 +255,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  contacto works!\n</p>\n"
+module.exports = "<div class=\"pageContent\">\n\n  </div>"
 
 /***/ }),
 
@@ -338,17 +361,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HighlightDirective", function() { return HighlightDirective; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
 
 
 var HighlightDirective = /** @class */ (function () {
-    function HighlightDirective(el) {
+    function HighlightDirective(el, document) {
         this.el = el;
+        this.document = document;
         var hostElem = this.el.nativeElement;
         if (el.nativeElement.getAttribute("movil-button") == "false") {
-            el.nativeElement.style.width = '16%';
+            el.nativeElement.style.width = 'auto';
             el.nativeElement.style.fontSize = '19px';
-            el.nativeElement.style.color = 'White';
             el.nativeElement.style.fontFamily = 'Arial';
+            if (this.document.location.pathname != "/home") {
+                el.nativeElement.style.color = 'Black';
+            }
+            else {
+                el.nativeElement.style.color = 'White';
+            }
         }
         else {
         }
@@ -361,13 +392,36 @@ var HighlightDirective = /** @class */ (function () {
     };
     HighlightDirective.prototype.onMouseLeave = function () {
         if (this.el.nativeElement.getAttribute("movil-button") == "false") {
-            this.highlight('White');
+            if (this.document.location.pathname != "/home") {
+                this.highlight('Black');
+            }
+            else {
+                this.highlight('White');
+            }
+        }
+    };
+    HighlightDirective.prototype.click = function () {
+        if (this.el.nativeElement.getAttribute("movil-button") == "false") {
+            if (this.el.nativeElement.text == "Inicio" || this.el.nativeElement.text == "") {
+                for (var _i = 0, _a = this.el.nativeElement.parentElement.parentElement.children; _i < _a.length; _i++) {
+                    var nodeD = _a[_i];
+                    nodeD.children[0].style.color = "White";
+                }
+            }
+            else {
+                for (var _b = 0, _c = this.el.nativeElement.parentElement.parentElement.children; _b < _c.length; _b++) {
+                    var nodeD = _c[_b];
+                    nodeD.children[0].style.color = "Black";
+                }
+            }
         }
     };
     HighlightDirective.prototype.highlight = function (color) {
         if (this.el.nativeElement.getAttribute("movil-button") == "false") {
             this.el.nativeElement.style.color = color;
         }
+    };
+    HighlightDirective.prototype.ngOnInit = function () {
     };
     var HighlightDirective_1;
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -382,6 +436,12 @@ var HighlightDirective = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
     ], HighlightDirective.prototype, "onMouseLeave", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('click'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], HighlightDirective.prototype, "click", null);
     HighlightDirective = HighlightDirective_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
             selector: '[mat-button]'
@@ -392,7 +452,8 @@ var HighlightDirective = /** @class */ (function () {
                 HighlightDirective_1
             ],
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], Document])
     ], HighlightDirective);
     return HighlightDirective;
 }());
@@ -408,7 +469,7 @@ var HighlightDirective = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ".page{\r\n    height: 100vh;\r\n    }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0lBQ2IiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wYWdle1xyXG4gICAgaGVpZ2h0OiAxMDB2aDtcclxuICAgIH0iXX0= */"
 
 /***/ }),
 
@@ -419,7 +480,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  home works!\n</p>\n"
+module.exports = ""
 
 /***/ }),
 
@@ -541,7 +602,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  productos works!\n</p>\n"
+module.exports = "<div class=\"pageContent\">\n  \n  </div>\n"
 
 /***/ }),
 
@@ -597,7 +658,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  promociones works!\n</p>\n"
+module.exports = "<div class=\"pageContent\">\n\n  </div>\n"
 
 /***/ }),
 
@@ -652,32 +713,23 @@ __webpack_require__.r(__webpack_exports__);
 var ToobarDirective = /** @class */ (function () {
     function ToobarDirective(el) {
         this.el = el;
+        this.el.nativeElement.style.backgroundColor = "Transparent";
     }
     ToobarDirective_1 = ToobarDirective;
-    ToobarDirective.prototype.onMouseEnter = function () {
-        this.highlight('Blue');
-        console.log("mouseenter");
-    };
-    ToobarDirective.prototype.onMouseLeave = function () {
-        this.highlight('White');
-        console.log("mouseleave");
-    };
+    /*
+    @HostListener('mouseover') onMouseEnter() {
+      this.highlight('Blue');
+    }
+   
+    @HostListener('mouseleave') onMouseLeave() {
+      this.highlight('Transparent');
+    }
+    */
     ToobarDirective.prototype.highlight = function (color) {
         this.el.nativeElement.style.backgroundColor = color;
+        this.el.nativeElement.style.transition = "all linear 0.5s";
     };
     var ToobarDirective_1;
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseenter'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
-    ], ToobarDirective.prototype, "onMouseEnter", null);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseleave'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
-    ], ToobarDirective.prototype, "onMouseLeave", null);
     ToobarDirective = ToobarDirective_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
             selector: '[toobar-Action]'
