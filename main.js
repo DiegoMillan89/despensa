@@ -97,7 +97,7 @@ module.exports = ".page{\r\nheight: 100vh;\r\n}\r\n.imagenHomeClass{\r\n    posi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page\">\n  <!--fxHide.lt-md=\"true\"-->\n  <div fxHide.lt-md=\"true\" *ngIf=\"ruta == 'Inicio' || ruta == '/'\" class=\"imagenHomeClass\" style=\"background-image:url('assets/VOYAGER_6200_PLANTRONICS.jpg');\"></div>\n  <div fxHide.gt-sm=\"true\" *ngIf=\"ruta == 'Inicio' || ruta == '/'\" class=\"imagenHomeClassMovil\" style=\"background-image:url('assets/VOYAGER_6200_PLANTRONICS.jpg');\"></div>\n  <mat-toolbar color=\"primary\" toobar-Action> \n    <span fxHide.lt-md=\"true\" class=\"logoSpan\"><a mat-button movil-button=\"false\" routerLink=\"/home\" (click)=\"cambioPagina('Inicio')\"><img mat-card-image class=\"img-logo\" src=\"assets/Logo.png\"/></a></span>\n    <div fxShow=\"true\" fxHide.lt-md=\"true\" class=\"menu-page\" *ngFor=\"let routeObj of routesObj\">\n      <a mat-button movil-button=\"false\" routerLink={{routeObj.link}} (click)=\"cambioPagina(routeObj.alias)\">{{routeObj.alias}}</a>\n    </div>\n    <div fxShow=\"true\" fxHide.gt-sm=\"true\" class=\"menu-movil\">\n      <mat-icon class=\"menu-toggle-movil\" (click)=\"sidenav.toggle()\">view_headline</mat-icon>\n      <a routerLink=\"/home\"><img mat-card-image class=\"img-logo-movil\" src=\"assets/Logo.png\"/></a>\n    </div>\n  </mat-toolbar>\n  <mat-sidenav-container fxFlexFill class=\"example-container\" class=\"sidenavClass\">\n    <mat-sidenav #sidenav fxLayout=\"column\">\n      <div fxLayout=\"column\" *ngFor=\"let routeObj of routesObj\">\n        <a mat-button movil-button=\"true\" routerLink=\"{{routeObj.link}}\" (click)=\"sidenav.toggle()\" (click)=\"cambioPaginaMovil(routeObj.alias)\">{{routeObj.alias}}</a>\n      </div>\n    </mat-sidenav>\n    <mat-sidenav-content fxFlexFill>\n      <router-outlet></router-outlet>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n  <app-footer ruta={{ruta}} (talk)=\"talkBack($event)\"></app-footer>\n</div>"
+module.exports = "<div class=\"page\">\n  <!--fxHide.lt-md=\"true\"-->\n  <div fxHide.lt-md=\"true\" *ngIf=\"ruta == 'Inicio'\" class=\"imagenHomeClass\" style=\"background-image:url('assets/VOYAGER_6200_PLANTRONICS.jpg');\"></div>\n  <div fxHide.gt-sm=\"true\" *ngIf=\"ruta == 'Inicio'\" class=\"imagenHomeClassMovil\" style=\"background-image:url('assets/VOYAGER_6200_PLANTRONICS.jpg');\"></div>\n  <mat-toolbar color=\"primary\" toobar-Action> \n    <span fxHide.lt-md=\"true\" class=\"logoSpan\"><a mat-button movil-button=\"false\" routerLink=\"/home\" (click)=\"cambioPagina('Inicio')\"><img mat-card-image class=\"img-logo\" src=\"assets/Logo.png\"/></a></span>\n    <div fxShow=\"true\" fxHide.lt-md=\"true\" class=\"menu-page\" *ngFor=\"let routeObj of routesObj\">\n      <a mat-button movil-button=\"false\" routerLink={{routeObj.link}} (click)=\"cambioPagina(routeObj.alias)\">{{routeObj.alias}}</a>\n    </div>\n    <div fxShow=\"true\" fxHide.gt-sm=\"true\" class=\"menu-movil\">\n      <mat-icon class=\"menu-toggle-movil\" (click)=\"sidenav.toggle()\">view_headline</mat-icon>\n      <a routerLink=\"/home\"><img mat-card-image class=\"img-logo-movil\" src=\"assets/Logo.png\"/></a>\n    </div>\n  </mat-toolbar>\n  <mat-sidenav-container fxFlexFill class=\"example-container\" class=\"sidenavClass\">\n    <mat-sidenav #sidenav fxLayout=\"column\">\n      <div fxLayout=\"column\" *ngFor=\"let routeObj of routesObj\">\n        <a mat-button movil-button=\"true\" routerLink=\"{{routeObj.link}}\" (click)=\"sidenav.toggle()\" (click)=\"cambioPaginaMovil(routeObj.alias)\">{{routeObj.alias}}</a>\n      </div>\n    </mat-sidenav>\n    <mat-sidenav-content fxFlexFill>\n      <router-outlet></router-outlet>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n  <app-footer ruta={{ruta}} (talk)=\"talkBack($event)\"></app-footer>\n</div>"
 
 /***/ }),
 
@@ -121,7 +121,6 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(document) {
         this.document = document;
         this.ruta = "";
-        this.chatItems = [];
         this.routesObj = [
             { nombre: "Home", link: "/home", alias: "Inicio", descripcion: "Pagina inicial" },
             { nombre: "About", link: "/about", alias: "Empresa", descripcion: "Pagina Mision" },
@@ -129,22 +128,20 @@ var AppComponent = /** @class */ (function () {
             { nombre: "Promociones", link: "/promociones", alias: "Promociones", descripcion: "Pagina Promociones" },
             { nombre: "Contacto", link: "/contacto", alias: "Contacto", descripcion: "Pagina Contacto" }
         ];
-        console.log(document.location.pathname);
-        if (document.location.pathname == "/home" || document.location.pathname == "/") {
-            this.ruta = "Inicio";
+        for (var _i = 0, _a = this.routesObj; _i < _a.length; _i++) {
+            var ruta = _a[_i];
+            if (ruta.link == document.location.pathname) {
+                this.ruta = ruta.alias;
+                break;
+            }
+            else {
+                this.ruta = "Inicio";
+            }
         }
-        else {
-            this.ruta = "";
-        }
+        console.log(this.ruta);
     }
     AppComponent.prototype.cambioPagina = function (nombre) {
         this.ruta = nombre;
-        if (nombre != "Inicio") {
-            this.imagenHome = false;
-        }
-        else {
-            this.imagenHome = true;
-        }
     };
     AppComponent.prototype.cambioPaginaMovil = function (nombre) {
         this.ruta = nombre;
@@ -212,13 +209,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: '', redirectTo: '/home', pathMatch: "full" },
+    { path: '', redirectTo: 'home', pathMatch: "full" },
     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"] },
     { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_8__["AboutComponent"] },
     { path: 'productos', component: _productos_productos_component__WEBPACK_IMPORTED_MODULE_10__["ProductosComponent"] },
     { path: 'promociones', component: _promociones_promociones_component__WEBPACK_IMPORTED_MODULE_11__["PromocionesComponent"] },
     { path: 'contacto', component: _contacto_contacto_component__WEBPACK_IMPORTED_MODULE_12__["ContactoComponent"] },
-    { path: '**', redirectTo: '/home', pathMatch: "full" }
+    { path: '**', redirectTo: 'home', pathMatch: "full" }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -267,26 +264,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+
 
 
 
 var HighlightDirective = /** @class */ (function () {
-    function HighlightDirective(el, document) {
+    function HighlightDirective(el, document, principal) {
         this.el = el;
         this.document = document;
-        var hostElem = this.el.nativeElement;
+        this.principal = principal;
         if (el.nativeElement.getAttribute("movil-button") == "false") {
             el.nativeElement.style.width = 'auto';
             el.nativeElement.style.fontSize = '19px';
             el.nativeElement.style.fontFamily = 'Arial';
-            if (this.document.location.pathname == "/home" || this.document.location.pathname == "/") {
+            if (this.principal.ruta == "Inicio") {
                 el.nativeElement.style.color = 'White';
             }
             else {
                 el.nativeElement.style.color = 'Black';
             }
-        }
-        else {
         }
     }
     HighlightDirective_1 = HighlightDirective;
@@ -357,8 +354,8 @@ var HighlightDirective = /** @class */ (function () {
                 HighlightDirective_1
             ],
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"])),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], Document])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"])), tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], Document, _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]])
     ], HighlightDirective);
     return HighlightDirective;
 }());
