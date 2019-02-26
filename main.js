@@ -296,7 +296,7 @@ var HighlightDirective = /** @class */ (function () {
     };
     HighlightDirective.prototype.onMouseLeave = function () {
         if (this.el.nativeElement.getAttribute("movil-button") == "false") {
-            if (this.document.location.pathname != "/home") {
+            if (this.principal.ruta != "Inicio") {
                 this.highlight('Black');
             }
             else {
